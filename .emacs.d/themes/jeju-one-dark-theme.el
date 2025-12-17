@@ -1,0 +1,20 @@
+(deftheme jeju-one-dark
+		  "Syntax highlighting that resembles the beautiful nature of Jeju Island, Korea.")
+
+(defun mv/face (face &rest plist)
+  (custom-theme-set-faces 'jeju-one-dark `(,face ((t ,plist)))))
+
+(mv/face 'default                      :background "#14191f" :foreground "#ffffff")
+(mv/face 'font-lock-type-face          :foreground "#f7b5c7")
+(mv/face 'font-lock-keyword-face       :foreground "#f79652")
+(mv/face 'font-lock-constant-face      :foreground "#94dff7")
+(mv/face 'font-lock-string-face        :foreground "#94dff7")
+(mv/face 'font-lock-variable-name-face :foreground "#ffffff")
+(mv/face 'font-lock-comment-face       :foreground "#54846b")
+(mv/face 'font-lock-preprocessor-face  :foreground "#f79652")
+(mv/face 'font-lock-escape-face        :foreground "#f79652")
+(mv/face 'font-lock-function-name-face :foreground "#cabbed")
+(mv/face 'font-lock-number-face        :foreground "#94dff7")
+(mv/face 'font-lock-function-call-face :foreground "#cabbed")
+
+(provide-theme 'jeju-one-dark)
