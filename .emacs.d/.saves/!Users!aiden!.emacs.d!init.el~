@@ -69,4 +69,5 @@
 		    :box nil)
 
 (setq-default left-margin-width 2)
-(require 'generic-x)
+
+

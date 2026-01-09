@@ -1,4 +1,4 @@
-(setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
+
 (add-hook 'prog-mode-hook
           (lambda ()
             (font-lock-add-keywords
@@ -19,7 +19,7 @@
    '("0c15dbe23dcf0fe0d1cee808d27553fa17868cc9daf19ce5c36c7871cd3ad9a2"
      "ffc4609ecd34ee966cbaf790ff1fa6507fd03d6fc39c64b9bbfd447f94910467"
      default))
- '(package-selected-packages '(corfu eat enlight rust-mode swift-mode zig-mode)))
+ '(package-selected-packages '(corfu eat enlight rust-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -69,4 +69,5 @@
 		    :box nil)
 
 (setq-default left-margin-width 2)
-(require 'generic-x)
+
+

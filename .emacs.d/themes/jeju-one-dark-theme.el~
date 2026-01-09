@@ -4,7 +4,7 @@
 (defun mv/face (face &rest plist)
   (custom-theme-set-faces 'jeju-one-dark `(,face ((t ,plist)))))
 
-(mv/face 'default                      :foreground "#ffffff")
+(mv/face 'default                      :background "#14191f" :foreground "#ffffff")
 (mv/face 'font-lock-type-face          :foreground "#f7b5c7")
 (mv/face 'font-lock-keyword-face       :foreground "#f79652")
 (mv/face 'font-lock-constant-face      :foreground "#94dff7")

@@ -4,7 +4,7 @@
 (defun mv/face (face &rest plist)
   (custom-theme-set-faces 'jeju-one-dark `(,face ((t ,plist)))))
 
-(mv/face 'default                      :foreground "#ffffff")
+(mv/face 'default                      :background "#14191f" :foreground "#ffffff")
 (mv/face 'font-lock-type-face          :foreground "#f7b5c7")
 (mv/face 'font-lock-keyword-face       :foreground "#f79652")
 (mv/face 'font-lock-constant-face      :foreground "#94dff7")
@@ -18,12 +18,10 @@
 (mv/face 'font-lock-function-call-face :foreground "#cabbed")
 
 (global-display-line-numbers-mode 1)
-
 (custom-set-faces
  '(line-number ((t (:foreground "#5a5977"))))
  '(line-number-current-line ((t (:foreground "#dbbfef" d)))))
 
-(custom-set-faces
- '(default ((t (:background nil)))))
+(bg nil)
 
 (provide-theme 'jeju-one-dark)
