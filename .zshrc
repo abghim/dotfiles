@@ -3,10 +3,9 @@ case $- in
     *) return;;
 esac
 
-CONFIG_DIR="/Users/aiden/.config/zsh"
+CONFIG_DIR="$HOME/.config/zsh"
 source $CONFIG_DIR/path.sh
 source $CONFIG_DIR/locale.sh
-source $CONFIG_DIR/autosuggest.sh
 source $CONFIG_DIR/aliases.sh
 source $CONFIG_DIR/prompt.sh
 source $CONFIG_DIR/misc.sh

@@ -1,5 +1,5 @@
 setopt PROMPT_SUBST
-export PROMPT='%1~ ✨ '
+export PROMPT='%1~ > '
 
 _prompt() {
 	local emoji="✅"
@@ -36,7 +36,7 @@ _prompt() {
 
 }
 
-# hook to every prompt
+# uncomment to hook to every prompt
 
-autoload -Uz add-zsh-hook
-add-zsh-hook preexec _prompt
+# autoload -Uz add-zsh-hook
+# add-zsh-hook preexec _prompt
