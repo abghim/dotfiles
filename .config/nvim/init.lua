@@ -32,10 +32,6 @@ require("statusline")
 vim.opt.updatetime = 700
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
-vim.opt.guifont = "Zed Plex Mono:h17"
-vim.g.neovide_hide_mouse_when_typing = true
-
--- LSP Config --
 
 vim.lsp.enable("jdtls")
 vim.lsp.enable("clangd")
@@ -53,19 +49,15 @@ cmp.setup({
       border = "rounded",
       winhighlight = "Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None",
       scrollbar = true,
-      -- optional: keep it from getting huge
-      -- max_height = 15,
     }),
     documentation = cmp.config.window.bordered({
       border = "rounded",
       winhighlight = "Normal:CmpDoc,FloatBorder:CmpDocBorder,Search:None",
       max_width = 15,   -- 15 columns (very narrow!)
-      -- optional: also cap height
       max_height = 15,
     }),
   },
 
-  -- limit number of visible suggestions
   performance = {
     max_view_entries = 15,
   },
