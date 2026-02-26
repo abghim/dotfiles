@@ -1,5 +1,17 @@
 {
   "logo": {
     "source": "~/.config/fastfetch/logo.txt"
-  }
+  },
+    "modules": [
+    "title",
+    "separator",
+    "os",
+    "kernel",
+    "uptime",
+    "packages",
+    "shell",
+    "terminal",
+    "wm",
+    "memory"
+  ]
 }
