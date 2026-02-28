@@ -186,7 +186,7 @@ bindsym $mod+r mode "resize"
 set $term alacritty
 bindsym $mod+Return exec --no-startup-id $term
 
-exec_always --no-startup-id feh --bg-fill ~/.config/wallpapers/bangudae.png
+exec_always --no-startup-id feh --bg-fill ~/.config/wallpaper/bangudae.png
 bindsym Mod1+Return exec --no-startup-id ~/.config/rofi/launchers/type-1/launcher.sh
 exec_always --no-startup-id picom
 exec_always --no-startup-id i3-resurrect restore
