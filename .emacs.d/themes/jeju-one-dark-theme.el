@@ -21,9 +21,9 @@
 
 (custom-set-faces
  '(line-number ((t (:foreground "#5a5977"))))
- '(line-number-current-line ((t (:foreground "#dbbfef" d)))))
+ '(line-number-current-line ((t (:foreground "#cabbed" d)))))
 
 (custom-set-faces
- '(default ((t (:background nil)))))
+ '(default ((t (:background "#14191f")))))
 
 (provide-theme 'jeju-one-dark)
