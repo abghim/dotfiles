@@ -2,6 +2,7 @@ return {
     bg            = "#14191f",
     fg            = "#ffffff",
     bg_dark       = "#161b22",
+    bg_cursorline = "#1C2228",
     bg_high       = "#333333",
     gray          = "#484f58",
 

@@ -1,8 +1,36 @@
 return {
 
+
 {
-  "nvim-mini/mini.starter",
-  event = "VimEnter",
+    "norcalli/nvim-colorizer.lua",
+    event = { "BufReadPre", "BufNewFile" },
+    config = function()
+      require("colorizer").setup({
+        -- Enable for all filetypes by default:
+        "*",
+
+        -- Or restrict/override per filetype:
+        -- css = { rgb_fn = true },
+        -- html = { names = true },
+      }, {
+        -- Global options:
+        RGB      = true,   -- #RGB hex codes
+        RRGGBB   = true,   -- #RRGGBB hex codes
+        RRGGBBAA = true,   -- #RRGGBBAA hex codes
+        AARRGGBB = true,   -- 0xAARRGGBB hex codes
+        rgb_fn   = true,   -- CSS rgb() / rgba()
+        hsl_fn   = true,   -- CSS hsl() / hsla()
+        names    = false,  -- "Blue", "red", etc.
+        css      = true,   -- Enable all CSS features
+        css_fn   = true,   -- Enable CSS functions
+        mode     = "background", -- "background" | "foreground" | "virtualtext"
+        virtualtext = "■",
+      })
+    end,
+  },
+	{
+	  "nvim-mini/mini.starter",
+	  event = "VimEnter",
   config = function()
     local starter = require("mini.starter")
     starter.setup({
@@ -34,13 +62,20 @@ return {
       footer = "",
     })
   end,
-}
+	}
 
 
-,
+	,
 
   {
-    "j-hui/fidget.nvim",
+    "m4xshen/autoclose.nvim",
+    config = function()
+      require("autoclose").setup()
+    end,
+  },
+
+	  {
+	    "j-hui/fidget.nvim",
     event = "LspAttach",
     opts = {},
   },
@@ -56,6 +91,42 @@ return {
             { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Toggle outline" },
         },
     },
+
+    -- ─────────────────────────────────────────────────── buffer / tab bar
+    -- {
+    --     "akinsho/bufferline.nvim",
+    --     version = "*",
+    --     dependencies = "nvim-tree/nvim-web-devicons",
+    --     config = function()
+    --         require("bufferline").setup({
+    --             options = {
+    --                 mode = "buffers",
+    --                 diagnostics = "nvim_lsp",
+    --                 show_close_icon = false,
+    --                 offsets = {
+    --                     {
+    --                         filetype = "neo-tree",   -- <─ check with `:echo &filetype`
+    --                         text = "File Explorer",  -- title on the empty strip
+    --                         highlight = "Directory", -- colour group (any highlight you like)
+    --                         text_align = "center",   -- "left" | "center" | "right"
+    --                         separator = true,        -- draw a │ divider after the title
+    --                         padding = 1,             -- blank cells left & right
+    --                     },
+    --                 },
+    --             },
+    --             highlights = {
+    --                 fill = {
+    --                     bg = "#14191f"
+    --                 },
+
+    --                 background = {
+    --                     bg = "#16171a"
+    --                 },
+    --             },
+    --         })
+    --     end,
+    -- },
+
     -- ─────────────────────────────────────────────────── syntax engine
     {
         "nvim-treesitter/nvim-treesitter",
@@ -67,7 +138,34 @@ return {
             })
         end,
     },
-   -- ─────────────────────────── nvim-cmp core + sources ───────────────────────
+
+    -- -- lua/plugins.lua  ── put this near the end
+    -- {
+    --     "hrsh7th/nvim-cmp",
+    --     dependencies = {
+    --         "hrsh7th/cmp-buffer",   -- words in open buffers
+    --         "hrsh7th/cmp-path",     -- filesystem paths
+    --         "hrsh7th/cmp-nvim-lsp", -- LSP completion  (remove if not using LSP)
+    --     },
+    --     config = function()
+    --         local cmp = require("cmp")
+    --         cmp.setup({
+    --             mapping = cmp.mapping.preset.insert({
+    --                 ["<C-Space>"] = cmp.mapping.complete(),
+    --                 ["<CR>"]      = cmp.mapping.confirm({ select = true }),
+    --                 ["<Tab>"]     = cmp.mapping.select_next_item(),
+    --                 ["<S-Tab>"]   = cmp.mapping.select_prev_item(),
+    --             }),
+    --             sources = {
+    --                 { name = "nvim_lsp" }, -- comment out if no LSP
+    --                 { name = "buffer" },
+    --                 { name = "path" },
+    --             },
+    --         })
+    --     end,
+    -- },
+
+    -- ─────────────────────────── nvim-cmp core + sources ───────────────────────
     {
         "hrsh7th/nvim-cmp",
         dependencies = {

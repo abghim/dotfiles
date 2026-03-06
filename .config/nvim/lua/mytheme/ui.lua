@@ -4,9 +4,9 @@ local function hi(group, opts)
     api.nvim_set_hl(0, group, opts)
 end
 
-hi("Normal", { fg = p.fg, bg=NONE })
-hi("NormalNC", { fg = p.fg, bg = NONE })
-hi("CursorLine", { bg = p.bg_high })
+hi("Normal", { fg = p.fg, bg=p.bg })
+hi("NormalNC", { fg = p.fg, bg = p.bg  })
+hi("CursorLine", { bg = p.bg_cursorline })
 hi("Visual", { bg = p.bg_high })
 hi("WinSeparator", { fg = p.bg_high })
 

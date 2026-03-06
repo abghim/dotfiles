@@ -28,18 +28,35 @@ require("lazy").setup("plugins")
 
 require("mytheme").setup()
 require("statusline")
-
+vim.opt.termguicolors = true;
 vim.opt.updatetime = 700
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
+vim.opt.guifont = "Monaco Nerd Font:h17"
+vim.g.neovide_hide_mouse_when_typing = true
+
+-- LSP Config --
 
 vim.lsp.enable("jdtls")
 vim.lsp.enable("clangd")
 vim.lsp.enable("rust_analyzer")
+vim.lsp.enable("ty")
+vim.lsp.enable("texlab")
 
 vim.lsp.config("jdtls", {cmd={"jdtls"}, filetypes={"java", "jav"}, settings={["jdtls"] = {},}})
 vim.lsp.config("rust_analyzer", {cmd={"rust-analyzer"}, filetypes={"rs","rust"}, settings={["rust_analyzer"] = {}}})
 vim.lsp.config("clangd", {cmd={"clangd"}, filetypes={"c", "cpp", "h", "hpp", "hh", "cc"}, settings={["clangd"] = {},}})
+
+vim.lsp.config("ty", {
+	cmd={"ty", "server"},
+	filetypes={"python","py"},
+
+}
+)
+
+vim.lsp.config("texlab", {cmd={"texlab"},filetypes={"tex","latex"}})
+
+
 
 local cmp = require("cmp")
 
@@ -49,15 +66,19 @@ cmp.setup({
       border = "rounded",
       winhighlight = "Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None",
       scrollbar = true,
+      -- optional: keep it from getting huge
+      -- max_height = 15,
     }),
     documentation = cmp.config.window.bordered({
       border = "rounded",
       winhighlight = "Normal:CmpDoc,FloatBorder:CmpDocBorder,Search:None",
       max_width = 15,   -- 15 columns (very narrow!)
+      -- optional: also cap height
       max_height = 15,
     }),
   },
 
+  -- limit number of visible suggestions
   performance = {
     max_view_entries = 15,
   },
@@ -125,8 +146,9 @@ vim.api.nvim_create_autocmd("FileType", {
 
 
 vim.opt.number = true
+vim.opt.relativenumber = true
 vim.opt.cursorline = true
-vim.opt.cursorlineopt = "number"
+vim.opt.cursorlineopt = "line,number"
 vim.opt.laststatus = 3
 
 vim.api.nvim_create_autocmd("FileType", {
