@@ -22,3 +22,13 @@ setopt HIST_IGNORE_ALL_DUPS HIST_IGNORE_SPACE HIST_REDUCE_BLANKS HIST_VERIFY
 
 export BAT_THEME='jeju-one-dark'
 export RA_LOG="rust_analyzer::main_loop=off,rust_analyzer::lsp_utils=off"
+export EDITOR="nvim"
+export VISUAL="nvim"
+export EZA_CONFIG_DIR=~/.config/eza
+
+bindkey -e
+
+# source <(fzf --zsh)
+source /opt/homebrew/Cellar/zinit/3.14.0/zinit.zsh
+
+export ARCH="124.53.171.180"
