@@ -40,3 +40,7 @@ if gum confirm "Install fonts to ~/.local/share/fonts?"; then
 	mkdir -p "$font_dir"
 	find "$REPO_ROOT/fonts" -type f \( -name '*.ttf' -o -name '*.otf' \) -exec cp -f {} "$font_dir/" \;
 fi
+
+if gum confirm "Install HallaVim setup?"; then
+	curl https://gist.githubusercontent.com/abghim/e0fe0f7f5b97f807f6fb2890abbd4a60/raw/.hallavim-install.sh | bash
+fi

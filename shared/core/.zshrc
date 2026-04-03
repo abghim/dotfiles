@@ -10,3 +10,5 @@ source $CONFIG_DIR/aliases.sh
 source $CONFIG_DIR/prompt.sh
 source $CONFIG_DIR/misc.sh
 source $CONFIG_DIR/functions.sh
+
+[[ -f "$HOME/.zshrc.local" ]] && source ~/.zshrc.local
