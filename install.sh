@@ -31,7 +31,7 @@ run_stow() {
 }
 
 if [ "${#selections[@]}" -gt 0 ]; then
-	gum confirm "Install these packages?" && run_stow ""
+	gum confirm "Install these packages?" && run_stow "--no-folding"
 fi
 
 if gum confirm "Install fonts to ~/.local/share/fonts?"; then
