@@ -11,6 +11,9 @@ OPTIONS=(
 	"shared/core"
 	"shared/misc"
 	"macos"
+	"linux/core"
+	"linux/misc"
+	"linux/de"
 )
 
 mapfile -t selections < <(gum choose --no-limit "${OPTIONS[@]}")
