@@ -1,0 +1,47 @@
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 936
+Cache-Control: max-age=14400
+Content-Security-Policy: default-src 'none'; img-src data:; style-src 'unsafe-inline'
+Content-Type: image/svg+xml
+Last-Modified: Thu, 05 Mar 2026 05:37:01 GMT
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-XSS-Protection: 1; mode=block
+Server: github.com
+X-GitHub-Request-Id: A2DC:122E05:84CAB:1A1360:69A91801
+Accept-Ranges: bytes
+Age: 0
+Date: Thu, 05 Mar 2026 05:43:33 GMT
+Via: 1.1 varnish
+X-Served-By: cache-icn1450021-ICN
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1772689414.677091,VS0,VE220
+X-Fastly-Request-ID: 22af0e5f66d6a41a788c136522d3ed7cc307b0e8
+Timing-Allow-Origin: https://github.com
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="121" height="20">
+  <linearGradient id="smooth" x2="0" y2="100%">
+    <stop offset="0" stop-color="#bbb" stop-opacity=".1"/>
+    <stop offset="1" stop-opacity=".1"/>
+  </linearGradient>
+
+  <mask id="round">
+    <rect width="121" height="20" rx="3" fill="#fff"/>
+  </mask>
+
+  <g mask="url(#round)">
+    <rect width="87" height="20" fill="#555"/>
+    <rect width="34" height="20" x="87" fill="#4c1"/>
+    <rect width="121" height="20" fill="url(#smooth)"/>
+  </g>
+
+  <g fill="#fff" text-anchor="middle" font-family="DejaVu Sans,Verdana,Geneva,sans-serif" font-size="11" text-rendering="geometricPrecision">
+    <text x="43" y="15" fill="#010101" fill-opacity=".3">dependencies</text>
+    <text x="43" y="14">dependencies</text>
+    <text x="104" y="15" fill="#010101" fill-opacity=".3">none</text>
+    <text x="104" y="14">none</text>
+  </g>
+</svg>
