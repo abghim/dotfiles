@@ -31,16 +31,16 @@ run_stow() {
 }
 
 if [ "${#selections[@]}" -gt 0 ]; then
-	run_stow -n
 	gum confirm "Install these packages?" && run_stow ""
 fi
 
 if gum confirm "Install fonts to ~/.local/share/fonts?"; then
 	font_dir="$HOME/.local/share/fonts"
 	mkdir -p "$font_dir"
-	find "$REPO_ROOT/fonts" -type f \( -name '*.ttf' -o -name '*.otf' \) -exec cp -f {} "$font_dir/" \;
+	echo "-n fonts -> $font_dir"
+	gum confirm "Install fonts?" && stow -d "$REPO_ROOT" -t "$font_dir" fonts
 fi
 
-if gum confirm "Install HallaVim setup?"; then
+if gum confirm "Install HallaVim setup?" --default="No"; then
 	curl https://gist.githubusercontent.com/abghim/e0fe0f7f5b97f807f6fb2890abbd4a60/raw/.hallavim-install.sh | bash
 fi
