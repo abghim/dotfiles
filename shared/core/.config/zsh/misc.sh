@@ -27,8 +27,4 @@ export VISUAL="nvim"
 export EZA_CONFIG_DIR=~/.config/eza
 
 bindkey -e
-
-# source <(fzf --zsh)
-source /opt/homebrew/Cellar/zinit/3.14.0/zinit.zsh
-
 export ARCH="124.53.171.180"
