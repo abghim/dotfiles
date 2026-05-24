@@ -8,28 +8,37 @@ command -v gum >/dev/null 2>&1 || { echo "gum is required"; exit 1; }
 command -v stow >/dev/null 2>&1 || { echo "stow is required"; exit 1; }
 
 OPTIONS=(
-	"shared/core"
-	"shared/misc"
-	"macos"
-	"linux/core"
-	"linux/misc"
-	"linux/de"
+	"git"
+	"emacs"
+	"tmux"
+	"tmux_helpers"
+	"zsh"
+	"zellij"
+	"eza"
+	"lazygit"
+	"pulse"
+	"alacritty"
+	"cava"
+	"ghostty"
+	"ghostty.macos"
+	"helix"
+	"hypr"
+	"kitty"
+	"quickshell"
+	"rio"
+	"sway"
 )
 
 mapfile -t selections < <(gum choose --no-limit "${OPTIONS[@]}")
 
 run_stow() {
 	local mode="$1"
-	local selection package_dir package_name
+	local package_name
 
-	for selection in "${selections[@]}"; do
-		package_dir="$(dirname "$selection")"
-		package_name="$(basename "$selection")"
-		echo "$mode $selection -> $HOME"
-		(
-			cd "$REPO_ROOT/$package_dir"
-			stow $mode -t "$HOME" "$package_name"
-		)
+	for package_name in "${selections[@]}"; do
+		[ -n "$package_name" ] || continue
+		echo "$mode $package_name -> $HOME"
+		stow $mode -d "$REPO_ROOT" -t "$HOME" "$package_name"
 	done
 }
 
