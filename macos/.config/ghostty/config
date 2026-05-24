@@ -22,8 +22,6 @@ command = zsh -ic "~/.wrap_tmux.sh"
 macos-icon = official
 macos-icon-frame = beige
 
-keybind = global:ctrl+grave_accent=toggle_quick_terminal
-
 macos-option-as-alt = true
 
 confirm-close-surface = false
