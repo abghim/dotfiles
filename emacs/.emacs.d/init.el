@@ -268,7 +268,6 @@
       '(("gnu" . "https://elpa.gnu.org/packages/")
         ("melpa" . "https://melpa.org/packages/")))
 
-(package-initialize)
 
 (let ((missing (cl-remove-if #'package-installed-p mv-icon-packages)))
   (when missing
@@ -331,11 +330,34 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(auto-complete nerd-icons-dired rust-mode treemacs-nerd-icons)))
+ '(package-selected-packages nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+(require 'package)
+
+(setq package-archives
+      '(("gnu"   . "https://elpa.gnu.org/packages/")
+        ("nongnu" . "https://elpa.nongnu.org/nongnu/")
+        ("melpa" . "https://melpa.org/packages/")))
+
+(unless package-archive-contents
+  (package-refresh-contents))
+
+(dolist (pkg '(use-package magit vterm))
+  (unless (package-installed-p pkg)
+    (package-install pkg)))
+
+(require 'use-package)
+
+(use-package magit
+  :ensure t
+  :commands (magit-status magit-dispatch))
+
+(use-package vterm
+  :ensure t
+  :commands vterm)
