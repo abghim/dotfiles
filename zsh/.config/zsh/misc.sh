@@ -28,3 +28,4 @@ export EZA_CONFIG_DIR=~/.config/eza
 
 bindkey -e
 export ARCH="124.53.171.180"
+export ETHR_BG="14191F"
