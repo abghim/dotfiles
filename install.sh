@@ -8,6 +8,7 @@ command -v gum >/dev/null 2>&1 || { echo "gum is required"; exit 1; }
 command -v stow >/dev/null 2>&1 || { echo "stow is required"; exit 1; }
 
 OPTIONS=(
+	"fish"
 	"git"
 	"emacs"
 	"tmux"
